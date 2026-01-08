@@ -1,9 +1,15 @@
+export interface ProductFeature {
+  title: string;
+  description: string;
+  icon: string;
+}
+
 export interface Product {
   id: string;
   name: string;
   price: number;
   description: string;
-  features: string[];
+  features: ProductFeature[];
   specs: Record<string, string>;
   image: string;
   images: string[];
@@ -16,13 +22,28 @@ export const products: Product[] = [
     id: 'octopus',
     name: 'Blue Plush Octopus',
     price: 29.99,
-    description: 'Transform your space with this charming Blue Plush Octopus. Crafted with premium, ultra-soft materials, this plushie is designed for both comfort and aesthetic appeal. Whether you are looking for a cuddly companion or a unique decorative piece, this octopus brings a touch of oceanic wonder to any room. Its vibrant blue hue and friendly expression make it a favorite for all ages.',
+    description: 'Transform your space with this charming Blue Plush Octopus. Crafted with premium, ultra-soft materials, this plushie is designed for both comfort and aesthetic appeal. Whether you are looking for a cuddly companion or a unique decorative piece, this octopus brings a touch of oceanic wonder to any room.',
     features: [
-      'Ultra-soft plush fabric for maximum comfort',
-      'Realistic eight-tentacle design',
-      'Child-safe embroidered eyes',
-      'Perfect size for hugging or shelf display',
-      'Hypoallergenic filling'
+      {
+        title: 'Premium Comfort',
+        description: 'Made with high-density ultra-soft plush fabric for a cloud-like feel.',
+        icon: 'Cloud'
+      },
+      {
+        title: 'Ergonomic Design',
+        description: 'Realistic eight-tentacle structure that provides great tactile feedback.',
+        icon: 'Heart'
+      },
+      {
+        title: 'Safe for All',
+        description: 'Features child-safe embroidered eyes and hypoallergenic filling.',
+        icon: 'ShieldCheck'
+      },
+      {
+        title: 'Artistic Decor',
+        description: 'Vibrant blue hue designed to complement modern interior aesthetics.',
+        icon: 'Palette'
+      }
     ],
     specs: {
       'Material': 'High-quality Polyester Fiber',
@@ -40,13 +61,28 @@ export const products: Product[] = [
     id: 'bell',
     name: 'Brass Ship Bell',
     price: 89.99,
-    description: 'This authentic Brass Ship Bell is a masterpiece of maritime craftsmanship. Cast from solid brass and polished to a brilliant mirror finish, it delivers a clear, resonant tone that commands attention. Ideal for marine enthusiasts, home bars, or as a classic front door bell, it combines historical charm with functional durability. It comes complete with a sturdy wall bracket and a handcrafted braided rope pull.',
+    description: 'This authentic Brass Ship Bell is a masterpiece of maritime craftsmanship. Cast from solid brass and polished to a brilliant mirror finish, it delivers a clear, resonant tone that commands attention.',
     features: [
-      'Solid cast brass construction',
-      'Loud, clear resonant sound',
-      'Weather-resistant polished finish',
-      'Hand-braided cotton lanyard',
-      'Includes mounting hardware'
+      {
+        title: 'Solid Brass Core',
+        description: 'Cast from heavy-duty solid brass for authentic maritime durability.',
+        icon: 'Anchor'
+      },
+      {
+        title: 'Resonant Sound',
+        description: 'Expertly tuned to produce a clear, long-lasting acoustic ring.',
+        icon: 'Volume2'
+      },
+      {
+        title: 'Mirror Finish',
+        description: 'Triple-polished surface provides a stunning weather-resistant shine.',
+        icon: 'Sun'
+      },
+      {
+        title: 'Ready to Mount',
+        description: 'Includes a heavy-duty bracket and handcrafted braided pull rope.',
+        icon: 'Settings'
+      }
     ],
     specs: {
       'Material': 'Solid Polished Brass',
@@ -64,13 +100,28 @@ export const products: Product[] = [
     id: 'adidas-shoe',
     name: 'Adidas Ultraboost Shoe',
     price: 159.99,
-    description: 'Experience the pinnacle of running technology with the Adidas Ultraboost. Engineered for ultimate energy return, these shoes feature the iconic Boost midsole that cushions every step. The Primeknit+ upper wraps the foot in a supportive, sock-like fit that adapts to your movement. Whether you are training for a marathon or navigating the city streets, the Ultraboost delivers unmatched comfort and style.',
+    description: 'Experience the pinnacle of running technology with the Adidas Ultraboost. Engineered for ultimate energy return, these shoes feature the iconic Boost midsole that cushions every step.',
     features: [
-      'Revolutionary Boost midsole for energy return',
-      'Primeknit+ adaptive textile upper',
-      'Continental™ Rubber outsole for superior grip',
-      'Torsion System for midfoot integrity',
-      'Made with recycled Primeblue materials'
+      {
+        title: 'Boost Velocity',
+        description: 'Revolutionary midsole technology that captures and returns energy.',
+        icon: 'Zap'
+      },
+      {
+        title: 'Primeknit Frame',
+        description: 'Adaptive textile upper that wraps the foot like a second skin.',
+        icon: 'Wind'
+      },
+      {
+        title: 'Continental Grip',
+        description: 'High-performance rubber outsole for extraordinary traction.',
+        icon: 'Navigation'
+      },
+      {
+        title: 'Eco Innovation',
+        description: 'Crafted with Primeblue high-performance recycled materials.',
+        icon: 'Leaf'
+      }
     ],
     specs: {
       'Weight': '11.1 oz (Size 9)',

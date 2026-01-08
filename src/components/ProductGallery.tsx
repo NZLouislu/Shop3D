@@ -6,8 +6,17 @@ import ThreeViewer from './ThreeViewer';
 import styles from '../app/product/[id]/product.module.css';
 import { Product } from '@/data/products';
 
+import * as LucideIcons from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
+
 export default function ProductGallery({ product }: { product: Product }) {
     const [activeMedia, setActiveMedia] = useState<'3d' | number>('3d');
+
+    const FeatureIcon = ({ name }: { name: string }) => {
+        const icons = LucideIcons as unknown as Record<string, LucideIcon>;
+        const Icon = icons[name];
+        return Icon ? <Icon size={32} /> : <LucideIcons.HelpCircle size={32} />;
+    };
 
     return (
         <div className={styles.productContent}>
@@ -46,7 +55,7 @@ export default function ProductGallery({ product }: { product: Product }) {
                     </div>
                 )}
                 {activeMedia === '3d' && (
-                    <p className={styles.hint} style={{ textAlign: 'center', marginTop: '1rem', color: '#999', position: 'absolute', bottom: '10px', width: '100%' }}>
+                    <p className={styles.hint} style={{ textAlign: 'center', marginTop: '1rem', color: '#999', position: 'absolute', bottom: '15px', width: '100%', fontSize: '0.85rem' }}>
                         3D Interactive Viewer • Drag to explore
                     </p>
                 )}
@@ -64,6 +73,7 @@ export default function ProductGallery({ product }: { product: Product }) {
                     <div className={styles.tags}>
                         <span className={styles.tag}>Flash Sale</span>
                         <span className={styles.tag}>Free Shipping</span>
+                        <span className={styles.tag}>Official Store</span>
                     </div>
                 </div>
 
@@ -82,7 +92,7 @@ export default function ProductGallery({ product }: { product: Product }) {
                     </div>
                 </div>
 
-                <p style={{ color: '#666', marginBottom: '2rem', fontSize: '1rem', lineHeight: '1.8' }}>
+                <p style={{ color: '#666', marginBottom: '1rem', fontSize: '1.05rem', lineHeight: '1.8' }}>
                     {product.description}
                 </p>
 
@@ -92,14 +102,20 @@ export default function ProductGallery({ product }: { product: Product }) {
                 </div>
             </div>
 
-            {/* Detailed Description Sections */}
-            <div className={styles.detailSection} style={{ gridColumn: '1 / -1' }}>
+            {/* Premium Detail Sections */}
+            <div className={styles.detailSection}>
                 <h2 className={styles.sectionTitle}>Key Features</h2>
-                <ul className={styles.featureList}>
+                <div className={styles.featureGrid}>
                     {product.features.map((feature, i) => (
-                        <li key={i}>{feature}</li>
+                        <div key={i} className={styles.featureCard}>
+                            <div className={styles.featureIcon}>
+                                <FeatureIcon name={feature.icon} />
+                            </div>
+                            <h3 className={styles.featureTitle}>{feature.title}</h3>
+                            <p className={styles.featureDesc}>{feature.description}</p>
+                        </div>
                     ))}
-                </ul>
+                </div>
 
                 <h2 className={styles.sectionTitle}>Product Specifications</h2>
                 <div className={styles.specsTable}>
