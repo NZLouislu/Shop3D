@@ -1,10 +1,18 @@
+"use client";
+
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { products } from '@/data/products';
 import styles from './page.module.css';
 
 export default function Home() {
+  const [activeCategory, setActiveCategory] = useState('All Items');
   const categories = ['All Items', 'Toys', 'Clothing', 'Shoes', 'Electronics', 'Home'];
+
+  const filteredProducts = activeCategory === 'All Items'
+    ? products
+    : products.filter(p => p.category === activeCategory);
 
   return (
     <main className="container">
@@ -12,8 +20,13 @@ export default function Home() {
         <aside className={styles.sidebar}>
           <h3>Categories</h3>
           <ul>
-            {categories.map((cat, i) => (
-              <li key={cat} className={i === 0 ? styles.active : ''}>
+            {categories.map((cat) => (
+              <li
+                key={cat}
+                className={activeCategory === cat ? styles.active : ''}
+                onClick={() => setActiveCategory(cat)}
+                style={{ cursor: 'pointer' }}
+              >
                 {cat}
               </li>
             ))}
@@ -22,7 +35,7 @@ export default function Home() {
 
         <section className={styles.content}>
           <div className={styles.grid}>
-            {products.map((product) => (
+            {filteredProducts.map((product) => (
               <Link key={product.id} href={`/product/${product.id}`} className={styles.card}>
                 <div className={styles.imageWrapper}>
                   <Image

@@ -82,13 +82,33 @@ export default function ProductGallery({ product }: { product: Product }) {
                     </div>
                 </div>
 
-                <p style={{ color: '#666', marginBottom: '2rem', fontSize: '0.95rem', lineHeight: '1.6' }}>
+                <p style={{ color: '#666', marginBottom: '2rem', fontSize: '1rem', lineHeight: '1.8' }}>
                     {product.description}
                 </p>
 
                 <div className={styles.actions}>
                     <button className={styles.buyNow}>Buy Now</button>
                     <button className={styles.addToCart}>Add to Cart</button>
+                </div>
+            </div>
+
+            {/* Detailed Description Sections */}
+            <div className={styles.detailSection} style={{ gridColumn: '1 / -1' }}>
+                <h2 className={styles.sectionTitle}>Key Features</h2>
+                <ul className={styles.featureList}>
+                    {product.features.map((feature, i) => (
+                        <li key={i}>{feature}</li>
+                    ))}
+                </ul>
+
+                <h2 className={styles.sectionTitle}>Product Specifications</h2>
+                <div className={styles.specsTable}>
+                    {Object.entries(product.specs).map(([key, value]) => (
+                        <div key={key} className={styles.specsItem}>
+                            <span className={styles.specsKey}>{key}</span>
+                            <span className={styles.specsValue}>{value}</span>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
