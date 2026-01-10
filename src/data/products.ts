@@ -131,8 +131,14 @@ export const products: Product[] = [
       'Sustainability': '50% recycled upper'
     },
     image: '/images/adidas-shoe.png',
-    images: ['/images/adidas-shoe.png'],
-    model: '/models/adidas-shoe.glb',
+    images: [
+      '/images/adidas-shoe.png',
+      '/images/adidas-shoe-1.png',
+      '/images/adidas-shoe-2.png',
+      '/images/adidas-shoe-3.png',
+      '/images/adidas-shoe-4.png'
+    ],
+    model: '/models/multi-image-Adidas-shoe.glb',
     category: 'Shoes',
   },
 ];

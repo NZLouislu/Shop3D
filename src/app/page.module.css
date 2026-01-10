@@ -1,7 +1,7 @@
 .mainContainer {
   display: flex;
   gap: 1.5rem;
-  margin-top: 1rem;
+  margin-top: 80px;
 }
 
 @media (max-width: 767px) {

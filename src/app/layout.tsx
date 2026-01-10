@@ -20,6 +20,8 @@ export const metadata: Metadata = {
 };
 
 
+import Footer from "@/components/Footer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,11 +29,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col`}>
         <Navbar />
-        <div style={{ paddingTop: '60px' }}>
+        <div className="flex-1 pt-[60px]">
           {children}
         </div>
+        <Footer className="shrink-0" />
       </body>
     </html>
   );

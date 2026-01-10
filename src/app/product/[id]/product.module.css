@@ -15,16 +15,25 @@
     display: grid;
     grid-template-columns: 100px 1fr 1fr;
     gap: 2.5rem;
-    background: var(--surface);
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 2.5rem 0;
 }
 
 .thumbnails {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    max-height: 100%;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.thumbnails::-webkit-scrollbar {
+    width: 4px;
+}
+
+.thumbnails::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    border-radius: 4px;
 }
 
 .thumbItem {
@@ -50,17 +59,20 @@
 
 .thumb3DLabel {
     position: absolute;
-    inset: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(2px);
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
     color: white;
-    font-size: 0.75rem;
-    font-weight: 700;
+    padding: 2px 0;
+    font-size: 0.65rem;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 }
 
 .viewerColumn {
@@ -69,8 +81,8 @@
     aspect-ratio: 1;
     background: radial-gradient(circle at center, #ffffff 0%, #f5f5f5 100%);
     border-radius: 20px;
-    overflow: hidden;
     border: 1px solid #f0f0f0;
+    z-index: 20;
 }
 
 .mainImageWrapper {
@@ -281,7 +293,7 @@
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid #f0f0f0;
-    max-width: 800px;
+    width: 100%;
     margin: 0 auto;
 }
 

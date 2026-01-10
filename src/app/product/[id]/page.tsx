@@ -1,8 +1,7 @@
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import { products } from '@/data/products';
 import ProductGallery from '@/components/ProductGallery';
-import styles from './product.module.css';
-import Link from 'next/link';
 
 export function generateStaticParams() {
     return products.map((product) => ({
@@ -18,12 +17,13 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
     }
 
     return (
-        <main className="container">
-            <div className={styles.backLink}>
-                <Link href="/" style={{ color: '#0070f3', textDecoration: 'none' }}>Home</Link>
-                <span style={{ margin: '0 8px', color: '#999' }}>{'>'}</span>
-                <span style={{ color: '#333', fontWeight: 500 }}>{product.name}</span>
+        <main className="container" style={{ marginTop: '80px' }}>
+            <div className="py-4 text-sm text-gray-500 mb-4">
+                <Link href="/" className="hover:text-orange-500 transition-colors">Home</Link>
+                <span className="mx-2">/</span>
+                <span className="text-gray-900 font-medium">{product.name}</span>
             </div>
+
 
             <ProductGallery product={product} />
         </main>

@@ -1,0 +1,53 @@
+.magnifierContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+}
+
+.mainImageWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.magnifierWindow {
+    display: none;
+    /* Hidden by default (mobile) */
+    position: absolute;
+    width: 400px;
+    /* Size of the zoom window */
+    height: 400px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    background-repeat: no-repeat;
+    z-index: 100;
+    top: 0;
+    left: 105%;
+    /* Position to the right of the main image */
+    border-radius: 12px;
+    pointer-events: none;
+    /* Ignore mouse events on the zoom window itself */
+}
+
+/* Only show on devices that support hover (Desktops) */
+@media (hover: hover) and (min-width: 1100px) {
+    .magnifierWindow {
+        display: block;
+    }
+}
+
+/* Adjustments for smaller screens where side-by-side isn't possible */
+@media (max-width: 1100px) {
+    .magnifierContainer {
+        cursor: default;
+    }
+
+    .magnifierWindow {
+        display: none !important;
+        /* Force hide on tablets/mobile */
+    }
+}

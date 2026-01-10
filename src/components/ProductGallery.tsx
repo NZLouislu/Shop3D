@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import ThreeViewer from './ThreeViewer';
+import ImageMagnifier from './ImageMagnifier';
 import styles from '../app/product/[id]/product.module.css';
 import { Product } from '@/data/products';
 
@@ -43,16 +44,12 @@ export default function ProductGallery({ product }: { product: Product }) {
             {/* Main Media Display */}
             <div className={styles.viewerColumn}>
                 {activeMedia === '3d' ? (
-                    <ThreeViewer modelUrl={product.model} />
+                    <ThreeViewer modelUrl={product.model} previewImage={product.image} />
                 ) : (
-                    <div className={styles.mainImageWrapper}>
-                        <Image
-                            src={product.images[activeMedia as number]}
-                            alt={product.name}
-                            fill
-                            style={{ objectFit: 'contain' }}
-                        />
-                    </div>
+                    <ImageMagnifier
+                        src={product.images[activeMedia as number]}
+                        alt={product.name}
+                    />
                 )}
                 {activeMedia === '3d' && (
                     <p className={styles.hint} style={{ textAlign: 'center', marginTop: '1rem', color: '#999', position: 'absolute', bottom: '15px', width: '100%', fontSize: '0.85rem' }}>
