@@ -35,28 +35,30 @@
 
 /* Brand Section */
 .brandSection {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    display: block;
+}
+
+.brandTextWrapper {
+    line-height: 1.6;
+    font-size: 0.95rem;
+    color: #666;
 }
 
 .brandTitle {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    /* Slightly reduced to sit better with text, originally 1.5rem */
     font-weight: 800;
     /* Gradient Text Effect */
     background: linear-gradient(135deg, #ff4400 0%, #ff8800 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    width: fit-content;
     letter-spacing: -0.5px;
+    display: inline;
 }
 
 .brandDesc {
     color: #666;
-    line-height: 1.6;
-    max-width: 500px;
-    /* Increased max-width slightly for better readability on single column */
-    font-size: 0.95rem;
+    display: inline;
 }
 
 /* Divider */

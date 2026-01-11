@@ -10,12 +10,14 @@ export default function Footer({ className, ...props }: ComponentPropsWithoutRef
                     {/* Top Content: Brand Only */}
                     <div className={styles.topSection}>
                         <div className={styles.brandSection}>
-                            <h3 className={styles.brandTitle}>
-                                NZLouis Shop
-                            </h3>
-                            <p className={styles.brandDesc}>
-                                Exploring the future of e-commerce with interactive 3D product showcases.
-                                Experience shopping in a new dimension.
+                            <p className={styles.brandTextWrapper}>
+                                <span className={styles.brandTitle}>
+                                    NZLouis Shop
+                                </span>
+                                <span className={styles.brandDesc}>
+                                    &nbsp;
+                                    Exploring the future of e-commerce with interactive 3D product showcases. Experience shopping in a new dimension.
+                                </span>
                             </p>
                         </div>
                     </div>
