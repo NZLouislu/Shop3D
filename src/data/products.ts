@@ -52,8 +52,8 @@ export const products: Product[] = [
       'Care': 'Hand wash recommended',
       'Recommended Age': '3+'
     },
-    image: '/images/octopus.png',
-    images: ['/images/octopus.png'],
+    image: '/images/octopus-v2.png',
+    images: ['/images/octopus-v2.png'],
     model: '/models/octopus.glb',
     category: 'Toys',
   },
@@ -91,8 +91,8 @@ export const products: Product[] = [
       'Mounting': 'Wall-mount bracket included',
       'Origin': 'Traditional Maritime Forge'
     },
-    image: '/images/bell.png',
-    images: ['/images/bell.png'],
+    image: '/images/bell-v2.png',
+    images: ['/images/bell-v2.png'],
     model: '/models/bell.glb',
     category: 'Home',
   },

@@ -12,11 +12,15 @@
   "dependencies": {
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.18.0",
+    "@remotion/cli": "^4.0.417",
+    "@remotion/player": "^4.0.417",
+    "@remotion/three": "^4.0.417",
     "@types/three": "^0.182.0",
     "lucide-react": "^0.562.0",
     "next": "14.2.35",
     "react": "^18",
     "react-dom": "^18",
+    "remotion": "^4.0.417",
     "three": "^0.170.0"
   },
   "devDependencies": {

@@ -20,7 +20,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
         <main className="container" style={{ marginTop: '80px' }}>
             <div className="py-4 text-sm text-gray-500 mb-4">
                 <Link href="/" className="hover:text-orange-500 transition-colors">Home</Link>
-                <span className="mx-2">/</span>
+                <span className="mx-2"> / </span>
                 <span className="text-gray-900 font-medium">{product.name}</span>
             </div>
 

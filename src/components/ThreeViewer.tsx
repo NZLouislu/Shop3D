@@ -49,7 +49,7 @@ export default function ThreeViewer({ modelUrl, previewImage }: { modelUrl: stri
         <div style={{
             width: '100%',
             height: '100%',
-            background: 'radial-gradient(circle at center, #ffffff 0%, #f5f5f5 100%)',
+            background: 'radial-gradient(circle at center, #ffffff 0%, #eeeeee 100%)',
             borderRadius: '12px',
             cursor: 'grab',
             position: 'relative',

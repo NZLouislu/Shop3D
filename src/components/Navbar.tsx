@@ -11,6 +11,7 @@ export default function Navbar() {
 
     const items = [
         { label: "Home", href: "/" },
+        { label: "Showcase", href: "/showcase" },
         { label: "Toys", href: "/#toys" },
         { label: "Clothing", href: "/#clothing" },
         { label: "Shoes", href: "/#shoes" },
