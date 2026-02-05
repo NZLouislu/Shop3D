@@ -1,7 +1,7 @@
 import React from 'react';
-import { interpolate, useCurrentFrame, useVideoConfig } from 'remotion';
+import { interpolate, useCurrentFrame } from 'remotion';
 import { ProductModel } from './ProductModel';
-import { Environment, Float, PerspectiveCamera } from '@react-three/drei';
+import { Environment, PerspectiveCamera } from '@react-three/drei';
 
 export const Scene: React.FC = () => {
     const frame = useCurrentFrame();
